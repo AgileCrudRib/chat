@@ -1,0 +1,5 @@
+<%= form_with(url: sessions_path, method: :post, local: true) do |form| %>
+  <%= form.text_field :name, placeholder: "Username", required: true %>
+  <%= form.password_field :password, placeholder: "Password", required: true %>
+  <%= form.submit "Sign Up / Log In" %>
+<% end %>

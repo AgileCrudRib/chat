@@ -1,0 +1,4 @@
+<%= form_with(url: rooms_path, method: :post, local: true) do |form| %>
+  <%= form.text_field :name, placeholder: "Name", required: true %>
+  <%= form.submit "Create / Join Room" %>
+<% end %>

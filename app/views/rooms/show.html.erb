@@ -1,0 +1,13 @@
+<h1><%= @room.name %></h1>
+
+<% @messages.each do |message| %>
+  <p>
+    <b><%= @user_names[message.user_id] %></b>: <%= message.content %>
+  </p>
+<% end %>
+
+<%= form_with(url: messages_path, method: :post, local: true) do |form| %>
+  <%= form.text_field :content, placeholder: "Message", required: true %>
+  <%= form.hidden_field :room_id, value: @room.id %> 
+  <%= form.submit "Send" %>
+<% end %>
